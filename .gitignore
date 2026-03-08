@@ -5,6 +5,7 @@ out/
 .kotlin
 *.class
 *.log
+*.iml
 
 # Package Files #
 *.jar
