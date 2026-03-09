@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class User_Input {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         //(Scanner)Name of the class, (scanner) name of the object
 
