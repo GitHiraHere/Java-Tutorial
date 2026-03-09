@@ -4,7 +4,7 @@ public class Main{
         //JAVA PROGRAM
         /*
             This is a multi-line comment
-         */
+        */
 
         System.out.print("I like pizza\n");
         System.out.println("It's really good!");

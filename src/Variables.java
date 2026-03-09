@@ -1,5 +1,6 @@
 public class Variables {
     public static void main(String[] args) {
+
         /*
             A variable is a reusable container for a value, it behaves as the containing value
 
