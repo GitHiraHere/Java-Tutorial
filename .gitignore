@@ -5,7 +5,6 @@ out/
 .kotlin
 *.class
 *.log
-*.iml
 
 # Package Files #
 *.jar
@@ -17,6 +16,8 @@ out/
 *.rar
 
 ### Intellij+all Patch ###
+# Ignore everything but code style settings and run configurations
+# that are supposed to be shared within teams.
 
 .idea/
 
