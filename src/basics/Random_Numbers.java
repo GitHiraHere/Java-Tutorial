@@ -20,6 +20,7 @@ public class Random_Numbers {
         // we can also generate a random double
         double number1;
         number1 = random.nextDouble(); // this will generate a number between 0 and 1
+        System.out.println(number1);
 
         // and also with boolean
 
