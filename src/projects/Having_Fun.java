@@ -20,6 +20,12 @@ public class Having_Fun {
         int generatedNumberMouths;
         int mazeWallOrFloor;
         int eightBallAnswer;
+        int randomSauces;
+        int randomBasicIngredients;
+        int randomBasicIngredients2;
+        int randomMeasurements;
+        int randomMeasurements2;
+        int randomMeasurements3;
 
 
         System.out.print("Pick A, B or C: ");
@@ -30,11 +36,12 @@ public class Having_Fun {
                 generatedNumberEyes = random.nextInt(0, 6); // Second val is exclusive
                 generatedNumberMouths = random.nextInt(0, 4);
 
-                String[] eyes = {"0 0", "T T", "@ @", " * *", "^ ^", "¬ ¬"}; //https://www.w3schools.com/java/java_arrays.asp
+                String[] eyes = {"0 0", "T T", "@ @", "* *", "^ ^", "¬ ¬"}; //https://www.w3schools.com/java/java_arrays.asp
                 String[] mouths = {"___", " ~", "---", ">"};
 
                 System.out.println(eyes[generatedNumberEyes]);
                 System.out.println(mouths[generatedNumberMouths]);
+                break; //https://www.reddit.com/r/CodingHelp/comments/r8vllw/whats_the_difference_between_break_continue_and/
 
             case 'B':
                 // # = walls . = floor
@@ -51,6 +58,9 @@ public class Having_Fun {
                             System.out.println("Something went wrong lad...");
                         }
                     }
+                    if(i == 3){
+                        return; //Figure out how to exit the loop and stop running the code
+                    }
                 }
             case 'C':
                 scanner.nextLine(); // Clear the buffer to remove the \n
@@ -61,9 +71,24 @@ public class Having_Fun {
                 eightBallAnswer = random.nextInt(0, 6);
 
                 System.out.println(eightBall[eightBallAnswer]);
+                break;
 
             case 'Z':
                 //Recipe generator
+                String[] sauces = {"Ketchup", "Vanilla Extract", "Pesto", "Chili Sauce"};
+                String[] basicIngredients = {"Flour", "Sugar", "Eggs", "Butter", "Yeast", "Baking soda"};
+                String[] measurements = {"500g", "5g", "2", "150g", "50g"};
+                randomSauces = random.nextInt(0, 4);
+                randomBasicIngredients = random.nextInt(0, 6);
+                randomBasicIngredients2 = random.nextInt(0, 6);
+                randomMeasurements = random.nextInt(0, 5);
+                randomMeasurements2 = random.nextInt(0, 5);
+                randomMeasurements3 = random.nextInt(0, 5);
+
+                System.out.println(measurements[randomMeasurements] + " " + basicIngredients[randomBasicIngredients] + " " +
+                        measurements[randomMeasurements2] + " " + basicIngredients[randomBasicIngredients2] + " "
+                        + measurements[randomMeasurements3] + " " + sauces[randomSauces]);
+                System.out.println("\n Enjoy :D");
         }
         scanner.close();
     }
