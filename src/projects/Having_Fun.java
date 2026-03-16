@@ -58,8 +58,10 @@ public class Having_Fun {
                             System.out.println("Something went wrong lad...");
                         }
                     }
-                    if(i == 3){
-                        return; //Figure out how to exit the loop and stop running the code
+                    // After debugging the code, the first for loop stops after i < 3 which means i = 2 so i == 3 is never true
+                    // therefore, i == 2 can be true after the process and ends the code block
+                    if(i == 2){
+                        return;
                     }
                 }
             case 'C':
