@@ -22,6 +22,9 @@ public class User_Input {
         System.out.print("Are you a student?(true/false): ");
         boolean isStudent = scanner.nextBoolean();
 
+        System.out.println("This is just to remind me you can take a char input: ");
+        char reminderLol = scanner.next().charAt(0); //next method gives a string, then we method chain charAt method for the first char
+
         if (isStudent) {
             System.out.println("You are a student!");
         } else {
