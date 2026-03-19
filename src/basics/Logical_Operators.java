@@ -28,7 +28,10 @@ public class Logical_Operators {
 
         if(username.length() < 4 || username.length() > 12) { //if username is greater than/equal to 4 and less than/equal to 12 INCORRECT had to use the or operator
             System.out.println("Username does not pass the requirements.");
-        } else{
+        } else if(username.contains(" ") || username.contains("_")){
+            System.out.println("Username must not contain spaces or underscores");
+        }
+        else{
             System.out.println("Username passes the requirements!");
         }
 
