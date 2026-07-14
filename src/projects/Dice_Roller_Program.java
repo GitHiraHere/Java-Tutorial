@@ -1,5 +1,8 @@
 package projects;
 
+import java.util.Scanner;
+import java.util.Random;
+
 public class Dice_Roller_Program {
     static void main(String[] args) {
         /* Using bro codes notes:
@@ -9,5 +12,63 @@ public class Dice_Roller_Program {
          * Roll all the die
          * Get the sum of all the die rolled
          */
+
+        int userDiceRollsChoice;
+        int total = 0;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("+====================+");
+        System.out.println("|        Menu        |");
+        System.out.println("+====================+");
+        System.out.println("| How many die would |");
+        System.out.println("|  you like to roll? |");
+        System.out.println("+--------------------+");
+
+        userDiceRollsChoice = scanner.nextInt();
+
+        if(userDiceRollsChoice > 0){
+            System.out.println("Invalid number. Please try again!");
+        } else{
+            System.out.println("Rolling dice...");
+        }
+
+        while(userDiceRollsChoice > 0){
+            System.out.println(diceRoll(userDiceRollsChoice, total));
+        }
+
+
+
     }
+
+    static int diceRoll(int userDiceRollsChoice, int total){
+
+        int systemDiceRoll;
+
+        Random random = new Random();
+        systemDiceRoll = random.nextInt(1, 6);
+
+        if(systemDiceRoll == 1){
+            System.out.println("+-------+\n" +
+                    "|       |\n" +
+                    "|   ●   |\n" +
+                    "|       |\n" +
+                    "+-------+");
+            total +=1;
+            userDiceRollsChoice--; //decrement operator, post decrement uses the value then subtracts, pre decrement --x subtracts then uses the value
+        } else if(systemDiceRoll == 2){
+            System.out.println("+-------+\n" +
+                    "| ●     |\n" +
+                    "|       |\n" +
+                    "|     ● |\n" +
+                    "+-------+");
+            total +=2;
+            userDiceRollsChoice--;
+        }
+
+        return systemDiceRoll;
+
+    }
+
+
 }
