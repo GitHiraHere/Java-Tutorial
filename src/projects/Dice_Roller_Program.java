@@ -4,17 +4,26 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Dice_Roller_Program {
+
+    static int total = 0;
+
     static void main(String[] args) {
         /* Using bro codes notes:
-         * Declare variables
-         * Get number of dice the user wants to roll
-         * Check if the number of dice is > 0 (greater than 0)
-         * Roll all the die
-         * Get the sum of all the die rolled
+         * Declare variables - DONE
+         * Get number of dice the user wants to roll - DONE
+         * Check if the number of dice is > 0 (greater than 0) - DONE
+         * Roll all the die - DONE
+         * Get the sum of all the die rolled - DONE
+         *
+         * Notes:
+         * he uses a for loop to iterate until the number of dice is equal to 0, he also generates a random number,
+         * to get his total he adds the variable that holds the random number generated, this is all done in one method
+         * he has a separate method to print the dice art assigns each to a variable i.e. dice1, dice2 and then uses a switch case
+         * to print the corresponding ascii art needed
          */
 
         int userDiceRollsChoice;
-        int total = 0;
+
 
         Scanner scanner = new Scanner(System.in);
 
@@ -34,19 +43,18 @@ public class Dice_Roller_Program {
         }
 
         while(userDiceRollsChoice > 0){ // > greater than | < less than
-            System.out.println(diceRoll(userDiceRollsChoice, total));
+            System.out.println(diceRoll(userDiceRollsChoice));
             userDiceRollsChoice--; //decrement operator, post decrement uses the value then subtracts, pre decrement --x subtracts then uses the value
         }
-        System.out.println("You have successfully completed your rolls!");
-        //System.out.printf("The total is %d", total);
 
-
+        System.out.println("\nYou have successfully completed your rolls!");
 
     }
 
-    static int diceRoll(int userDiceRollsChoice, int total){
+    static int diceRoll(int userDiceRollsChoice){
 
         int systemDiceRoll;
+        //int total; causing issues if I do not initialise, so going to make this a class variable
 
         Random random = new Random();
         systemDiceRoll = random.nextInt(1, 6);
@@ -102,7 +110,8 @@ public class Dice_Roller_Program {
             System.out.println("Something went wrong, please try again!");
         }
 
-        return 0; // temporarily 0 until I am able to return the value I want
+        System.out.println("Your total is now: ");
+        return total;
 
     }
 
