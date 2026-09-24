@@ -1,7 +1,9 @@
 package projects;
 
+import java.util.Scanner;
+
 public class Quiz_Game {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         /* creating an array of custom questions and then a 2d array of all the options for answers
         * the user will type in a number 1-4 depending on the guess
         * after all questions are answered we will display the users final score
@@ -17,6 +19,8 @@ public class Quiz_Game {
         * Display final score
         */
 
+        Scanner scanner = new Scanner(System.in);
+
         String[] Questions = {"What is the oldest rainforest in the world?",
                 "What is the atomic number of Californium?",
                 "In which US state is it illegal to ride a horse over 10 mph?",
@@ -29,7 +33,32 @@ public class Quiz_Game {
                 {"1. San Francisco", "2. Seattle", "3. New York City", "4. Austin"},
                 {"1. A flag", "2. A plaque", "3. A banner", "A pole"}};
 
+        char userInput = 'T';
 
+        while(!(userInput == 'A') || !(userInput == 'B')){
+            System.out.println("=== MENU ===");
+            System.out.println("\nA. Start guessing!");
+            System.out.println("\nB. Exit");
+
+            System.out.print("\n Please enter your option: ");
+            userInput = scanner.next().charAt(0); //next method gives a string, then we method chain charAt method for the first char
+
+            if(userInput == 'B'){
+                System.out.println("\nExiting system... Goodbye!");
+                return;
+            }else if(userInput == 'A'){
+                System.out.println("\nContinuing onto questions!");
+            }else{
+                System.out.println("\nSomething went wrong!");
+                return;
+            }
+        }
+
+        for(String[] qs : Questions){
+            for(String answer : Options){
+                System.out.println(qs + " " + answer + " ");
+            }
+        }
 
     }
 }

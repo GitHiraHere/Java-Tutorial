@@ -17,7 +17,7 @@ public class TwoD_Array {
 
         //if you ever want to access an element you need to use two indices [][]
         //first one is the row second is the column
-        groceries[1][2 ] = "pineapple";
+        groceries[1][2] = "pineapple";
 
         for(String[] foods : groceries){
             for(String food : foods){
