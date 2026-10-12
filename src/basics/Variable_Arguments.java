@@ -5,6 +5,11 @@ public class Variable_Arguments {
         //variable arguments allow a method to accept a varying number of arguments
         //makes methods more flexible, so, no need for overloaded methods (same name but different parameters)
         //java puts the arguments into an array
+
+        //these are used when we dont know how many parameters the user will input, they are
+        // inefficient and it can be dangerous to use these as users can spam in arguments,
+        // so we try use overloaded methods where we can
+
         System.out.println(add(1,2,3,4)); //you can even have 0 arguments
 
         System.out.println(average(11,54,74,75)); //I can add as many arguments as I want and do not need to add as parameters to the method being called
