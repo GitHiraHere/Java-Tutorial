@@ -18,10 +18,14 @@ public class Slot_Machine {
          * Get payout
          * Ask to play again
          * Display exit message
+         *
+         * Notes:
+         * https://www.geeksforgeeks.org/java/stringbuilder-append-method-in-java-with-examples/
          */
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        StringBuilder sb = new StringBuilder();
 
         int balance = 100;
         int bet;
@@ -44,6 +48,7 @@ public class Slot_Machine {
             System.out.println("You do not have sufficient funds to place this bet, try again!");
         } else{
             System.out.println("Spinning...");
+            balance = balance - bet;
         }
 
         for(int i = 0; i < 3; i++){
@@ -51,24 +56,49 @@ public class Slot_Machine {
 
             if(number == 0){
                 System.out.print("🍒");
+                sb.append("🍒");
 
             } else if(number == 1){
                 System.out.print("🍉");
+                sb.append("🍉");
 
             } else if(number == 2){
                 System.out.print("🍋");
+                sb.append("🍋");
 
             } else if(number == 3) {
                 System.out.print("🔔");
+                sb.append("🔔");
 
             } else if(number == 4) {
                 System.out.print("⭐");
+                sb.append("⭐");
 
             }else{
                 System.out.println("Something went wrong!");
             }
         }
 
+        if(sb.equals("🍒🍒🍒")){
+            balance = bet + bet; //bet gets doubled and given back if they win
+            System.out.println("You win! Your balance is now: " + balance);
+
+        } else if(sb.equals("🍉🍉🍉")){
+            balance = bet + bet;
+            System.out.println("You win! Your balance is now: " + balance);
+
+        } else if(sb.equals("🍋🍋🍋")){
+            balance = bet + bet;
+            System.out.println("You win! Your balance is now: " + balance);
+
+        } else if(sb.equals("🔔🔔🔔")){
+            balance = bet + bet;
+            System.out.println("You win! Your balance is now: " + balance);
+
+        } else if(sb.equals("⭐⭐⭐")){
+            balance = bet + bet;
+            System.out.println("You win! Your balance is now: " + balance);
+        }
 
         scanner.close();
 
