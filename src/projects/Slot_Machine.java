@@ -21,6 +21,12 @@ public class Slot_Machine {
          *
          * Notes:
          * https://www.geeksforgeeks.org/java/stringbuilder-append-method-in-java-with-examples/
+         *
+         * Bro code used a different method (Static) to spin the slots, it returns a string array, then he had another
+         * array that had a limit of 3, using random it called 3 random symbols from the first array. This would increment
+         * the second array, then he joined the three symbols using arrayName.Join. Then he compared the indexes (0,1,2)
+         * to see if they matched using arrayName.equals and this would give them a point.
+         * He also had a play again function
          */
 
         Scanner scanner = new Scanner(System.in);
